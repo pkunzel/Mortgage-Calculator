@@ -1,4 +1,9 @@
 @font-face {
-  font-family: graphik;
-  src: url("../fonts/graphik/Graphik-Regular.otf");
+    font-family: graphik;
+    src: url("../fonts/graphik/Graphik-Regular.otf");
+}
+
+@font-face {
+    font-family: PublickBanner;
+    src: url("../fonts/publico_banner/PublicoBanner-Medium.otf");
 }
