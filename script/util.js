@@ -1,7 +1,7 @@
 /**
  * @description Shortcut for the querySelector
  */
-const $query = document.querySelector;
+const $query = document.querySelector.bind(document);
 
 /**
  * @description Adds a mask that converts a plain number to Dollar
