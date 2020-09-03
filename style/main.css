@@ -7,3 +7,16 @@
     font-family: PublickBanner;
     src: url("../fonts/publico_banner/PublicoBanner-Medium.otf");
 }
+
+div{
+    border:1px lightgray dotted;
+}
+
+.mortgage-calculator{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.results{
+    background-color: rgba(186, 186, 252,0.5);
+}

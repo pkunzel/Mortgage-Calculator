@@ -1,75 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <link rel="stylesheet" href="style/main.css" />
-    </head>
 
-    <body>
-        <div class="mortgage-calculator">
-            <h1>Mortgage Calculator</h1>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style/main.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Mortgage Calculator</h1>
+        <hr />
+    </header>
+    <div class="mortgage-calculator">
+        <div class="calculator">
+            <h3>Change values to calculate your results</h3>
             <hr />
-
-            <div class="calculator">
-                <h3>Change values to calculate your results</h3>
-                <hr />
+            <div>
                 <div>
-                    <div>
-                        <label>Years of mortgage</label>
-                        <input type="range" />
-                    </div>
-                    <div>
-                        <input type="text" />
-                    </div>
+                    <label>Years of mortgage</label>
+                    <input type="range" />
                 </div>
                 <div>
-                    <div>
-                        <label>Rate of Interest (%)</label>
-                        <input type="range" />
-                    </div>
-                    <div>
-                        <input type="text" />
-                    </div>
+                    <input type="text" />
                 </div>
-                <div>
-                    <div>
-                        <label>Loan Amount</label>
-                        <input type="text" />
-                    </div>
-                    <div>
-                        <label>Annual Tax</label>
-                        <input type="text" />
-                    </div>
-                    <div>
-                        <label>Annual Insurance</label>
-                        <input type="text" />
-                    </div>
-                </div>
-                <button>Calculate</button>
             </div>
             <div>
-                <h2>Your results</h2>
                 <div>
-                    <p>Principle & Interest</p>
-                    <p>$--</p>
+                    <label>Rate of Interest (%)</label>
+                    <input type="range" />
                 </div>
                 <div>
-                    <p>Tax</p>
-                    <p>$--</p>
+                    <input type="text" />
+                </div>
+            </div>
+            <div>
+                <div>
+                    <label>Loan Amount</label>
+                    <input type="text" />
                 </div>
                 <div>
-                    <p>Insurance</p>
-                    <p>$--</p>
+                    <label>Annual Tax</label>
+                    <input type="text" />
                 </div>
-                <hr />
-                <h2>Total Monthly Payment</h2>
+                <div>
+                    <label>Annual Insurance</label>
+                    <input type="text" />
+                </div>
+            </div>
+            <button>Calculate</button>
+        </div>
+        <div class="results">
+            <h2>Your results</h2>
+            <div>
+                <p>Principle & Interest</p>
                 <p>$--</p>
             </div>
+            <div>
+                <p>Tax</p>
+                <p>$--</p>
+            </div>
+            <div>
+                <p>Insurance</p>
+                <p>$--</p>
+            </div>
+            <hr />
+            <h2>Total Monthly Payment</h2>
+            <p>$--</p>
         </div>
+    </div>
 
-        <script src="script/util.js"></script>
-        <script src="script/main.js"></script>
-    </body>
+    <script src="script/util.js"></script>
+    <script src="script/main.js"></script>
+</body>
+
 </html>
