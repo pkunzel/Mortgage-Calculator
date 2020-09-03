@@ -1,22 +1,127 @@
 @font-face {
-    font-family: graphik;
-    src: url("../fonts/graphik/Graphik-Regular.otf");
+	font-family: graphik;
+	src: url("../fonts/graphik/Graphik-Regular.otf");
 }
 
 @font-face {
-    font-family: PublickBanner;
-    src: url("../fonts/publico_banner/PublicoBanner-Medium.otf");
+	font-family: PublickBanner;
+	src: url("../fonts/publico_banner/PublicoBanner-Medium.otf");
 }
 
-div{
-    border:1px lightgray dotted;
+hr {
+	margin-bottom: 25px;
 }
 
-.mortgage-calculator{
-    display: grid;
-    grid-template-columns: 50% 50%;
+main {
+	width: 90vw;
+	max-width: 900px;
+	margin: 0 auto;
+	border: 1px solid black;
+	padding: 0 30px 60px;
 }
 
-.results{
-    background-color: rgba(186, 186, 252,0.5);
+.mortgage-calculator {
+	display: grid;
+	grid-template-columns: 50% 50%;
+}
+
+.calculator {
+	box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.3);
+	padding: 0 35px;
+}
+
+.calculator div label {
+	display: block;
+	margin-bottom: 10px;
+}
+
+.calculator div input[type="text"] {
+	padding: 5px 25px;
+	width: calc(100% - 50px);
+}
+
+.calculator button {
+	width: 100%;
+	padding: 10px;
+	border-radius: 25px;
+	background-color: blue;
+	color: white;
+	font-size: 20px;
+	font-weight: 900;
+}
+
+.inputRangeBlock {
+	margin-bottom: 20px;
+	display: grid;
+	grid-template-columns: auto 50px;
+}
+
+.inputRangeBlock input[type="range"] {
+	-webkit-appearance: none;
+	width: 80%;
+	height: 8px;
+	border-radius: 5px;
+	background: black;
+	outline: none;
+	opacity: 0.7;
+	-webkit-transition: 0.2s;
+	transition: opacity 0.2s;
+}
+
+.inputRangeBlock input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	background: white;
+	cursor: pointer;
+	box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.3);
+}
+
+.inputRangeBlock input[type="range"] ::-moz-range-thumb {
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	background: white;
+	cursor: pointer;
+}
+
+/* .inputRangeBlock input[type="range"]::-webkit-slider-runnable-track {
+	background-color: black;
+} */
+
+.inputTextBlock {
+	display: grid;
+	grid-template-columns: 50% 50%;
+}
+
+.inputTextBlock div {
+	margin-bottom: 10px;
+}
+
+.inputTextBlock > div:first-child {
+	grid-column: 1 / span 2;
+}
+
+.inputTextBlock > div:first-child {
+	grid-column: 1 / span 2;
+}
+
+.inputTextBlock > div:nth-child(2) {
+	padding-right: 15px;
+}
+
+.inputTextBlock > div:nth-child(3) {
+	padding-left: 15px;
+}
+
+.results {
+	padding: 50px 0;
+}
+
+.results > div {
+	background-color: rgba(221, 221, 221, 0.75);
+	padding: 35px;
+	width: fit-content;
 }
