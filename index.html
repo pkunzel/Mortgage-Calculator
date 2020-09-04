@@ -1,94 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="style/main.css" />
+	</head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style/main.css" />
-</head>
+	<body>
+		<main>
+			<header>
+				<h1>Mortgage Calculator</h1>
+				<hr />
+			</header>
+			<div class="mortgage-calculator">
+				<section class="calculator">
+					<h3>Change values to calculate your results</h3>
+					<hr />
+					<div class="inputRangeBlock">
+						<label>Years of mortgage</label>
+						<div class="inputRangeField">
+							<span>1</span>
+							<input id="yearsOfMortgage" type="range" min="1" max="40" value="20" />
+							<span>40</span>
+							<input type="text" value="20" />
+						</div>
+					</div>
 
-<body>
-    <main>
-        <header>
-            <h1>Mortgage Calculator</h1>
-            <hr />
-        </header>
-        <div class="mortgage-calculator">
-            <section class="calculator">
-                <h3>Change values to calculate your results</h3>
-                <hr />
-                <div class="inputRangeBlock">
-                    <div>
-                        <label>Years of mortgage</label>
-                        <div>
-                            <span>1</span>
-                            <input type="range" />
-                            <span>40</span>
-                        </div>
-                    </div>
-                    <div>
-                        <input type="text" />
-                    </div>
-                </div>
+					<div class="inputRangeBlock">
+						<label>Rate of Interest (%)</label>
+						<div class="inputRangeField">
+							<span>0.1</span>
+							<input id="interestRate" type="range" min="0.1" max="10" step="0.1" value="5" />
+							<span>40</span>
+							<input type="text" value="5" />
+						</div>
+					</div>
+					<div class="inputTextBlock">
+						<div>
+							<label>Loan Amount</label>
+							<div>
+								<span>$</span>
+								<input id="loanAmount" name="Loan Amount" type="text" />
+								<small></small>
+							</div>
+						</div>
+						<div>
+							<label>Annual Tax</label>
+							<div>
+								<span>$</span>
+								<input id="annualTax" name="Annual Tax" type="text" />
+								<small></small>
+							</div>
+						</div>
+						<div>
+							<label>Annual Insurance</label>
+							<div>
+								<span>$</span>
+								<input id="annualInsurance" name="Annual Insurance" type="text" />
+								<small></small>
+							</div>
+						</div>
+					</div>
+					<button>Calculate</button>
+				</section>
+				<section class="results">
+					<div>
+						<h2>Your results</h2>
+						<div class="resultOutput">
+							<p>Principle & Interest</p>
+							<p id="resultPrinciple">$ - -</p>
+						</div>
+						<div class="resultOutput">
+							<p>Tax</p>
+							<p id="resultTax">$ - -</p>
+						</div>
+						<div class="resultOutput">
+							<p>Insurance</p>
+							<p id="resultInsurance">$ - -</p>
+						</div>
+						<hr />
+						<div class="resultOutput totalPayment">
+							<p>Total Monthly Payment</p>
+							<p id="resultMonthlyPay">$ - -</p>
+						</div>
+					</div>
+				</section>
+			</div>
+		</main>
 
-                <div class="inputRangeBlock">
-                    <div>
-                        <label>Rate of Interest (%)</label>
-                        <div>
-                            <span>0.1</span>
-                            <input type="range" />
-                            <span>40</span>
-                        </div>
-                    </div>
-                    <div>
-                        <input type="text" />
-                    </div>
-                </div>
-                <div class="inputTextBlock">
-                    <div>
-                        <label>Loan Amount</label>
-                        <input type="text" />
-                    </div>
-                    <div>
-                        <label>Annual Tax</label>
-                        <input type="text" />
-                    </div>
-                    <div>
-                        <label>Annual Insurance</label>
-                        <input type="text" />
-                    </div>
-                </div>
-                <button>Calculate</button>
-            </section>
-            <section class="results">
-                <div>
-                    <h2>Your results</h2>
-                    <div>
-                        <p>Principle & Interest</p>
-                        <p>$--</p>
-                    </div>
-                    <div>
-                        <p>Tax</p>
-                        <p>$--</p>
-                    </div>
-                    <div>
-                        <p>Insurance</p>
-                        <p>$--</p>
-                    </div>
-                    <hr />
-                    <h2>Total Monthly Payment</h2>
-                    <p>$--</p>
-                </div>
-
-            </section>
-        </div>
-    </main>
-
-
-    <script src="script/calculator.js"></script>
-    <script src="script/util.js"></script>
-    <script src="script/main.js"></script>
-</body>
-
+		<script src="script/calculator.js"></script>
+		<script src="script/util.js"></script>
+		<script src="script/main.js"></script>
+	</body>
 </html>
