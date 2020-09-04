@@ -5,6 +5,8 @@ function init() {
 	$query("button").addEventListener("click", handleCalculate);
 
 	$queryAll('.inputRangeBlock input[type="range"]').forEach((element) => {
+		const percentRange = (element.value / element.max) * 100;
+		element.style.background = `linear-gradient(90deg, rgb(10,10,01) 0 ${percentRange}%, rgb(222,222,222) ${percentRange}%)`;
 		element.addEventListener("input", handleInputRange);
 	});
 }
@@ -16,7 +18,7 @@ function handleInputRange(event) {
 	inputRange.nextElementSibling.nextElementSibling.value = inputRange.value;
 }
 
-function handleCalculate() {
+function handleCalculate(event) {
 	const mortData = {
 		annualTax: $query("#annualTax"),
 		annualInsurance: $query("#annualInsurance"),
@@ -28,9 +30,24 @@ function handleCalculate() {
 	if (checkInputs([mortData.annualTax, mortData.annualInsurance, mortData.loanAmount])) {
 		const calc = new Calculator(mortData);
 
-		$query("#resultPrinciple").textContent = calc.getPrincipleAndInterestDollars();
-		$query("#resultTax").textContent = calc.getTaxDollars();
-		$query("#resultMonthlyPay").textContent = calc.getMonthlyPayments();
+		let princ = $query("#resultPrinciple");
+		princ.textContent = calc.getPrincipleAndInterestDollars();
+		princ.style.color = "black";
+
+		let tax = $query("#resultTax");
+		tax.textContent = calc.getTaxDollars();
+		tax.style.color = "black";
+
+		let insurance = $query("#resultInsurance");
+		insurance.textContent = calc.getInsuranceDollars();
+		insurance.style.color = "black";
+
+		let monthly = $query("#resultMonthlyPay");
+		monthly.textContent = calc.getMonthlyPayments();
+		monthly.style.color = "black";
+
+		event.target.textContent = "Recalculate";
+		$query(".results").style.display = "block";
 	}
 }
 

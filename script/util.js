@@ -13,7 +13,8 @@ const $queryAll = document.querySelectorAll.bind(document);
  * @param {number} value The value to received the Dollar Mask
  * @returns {string} a string representation of the value in Dollars
  */
-const toDollar = (value) => new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(value);
+const toDollar = (value) =>
+	new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(value).replace(/^(\D+)/, "$1 ");
 
 /**
  * @description Devides an annual value in months
