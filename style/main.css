@@ -21,6 +21,10 @@ h3 {
 	font-size: 1.05em;
 }
 
+input {
+	border: 1px solid black;
+}
+
 hr {
 	margin-bottom: 25px;
 }
@@ -82,7 +86,7 @@ main {
 	outline: none;
 	border-radius: 5px;
 	height: 10px;
-	background: linear-gradient(90deg, black 0 50%, lightgray 50%);
+	/* background: linear-gradient(90deg, black 0 50%, lightgray 50%); */
 }
 
 /* .inputRangeBlock input[type="range"]::-webkit-slider-runnable-track {

@@ -10,7 +10,10 @@ function init() {
 		element.addEventListener("input", handleInputRange);
 	});
 }
-
+/**
+ *
+ * @param {*} event
+ */
 function handleInputRange(event) {
 	const inputRange = event.target;
 	const percentRange = (inputRange.value / inputRange.max) * 100;
@@ -18,6 +21,10 @@ function handleInputRange(event) {
 	inputRange.nextElementSibling.nextElementSibling.value = inputRange.value;
 }
 
+/**
+ *
+ * @param {*} event
+ */
 function handleCalculate(event) {
 	const mortData = {
 		annualTax: $query("#annualTax"),
@@ -51,23 +58,35 @@ function handleCalculate(event) {
 	}
 }
 
+/**
+ *
+ * @param {*} checklist
+ */
 function checkInputs(checklist) {
 	let passed = true;
 	checklist.forEach((item) => {
 		if (item.value.trim() == "") {
 			passed = false;
 			showElementWithMessage(item.nextElementSibling, `${item.name} is mandatory`);
+			item.style.borderColor = "red";
 		} else if (isNaN(item.value)) {
 			passed = false;
 			showElementWithMessage(item.nextElementSibling, "Value must be numeric");
+			item.style.borderColor = "red";
 		} else {
 			showElementWithMessage(item.nextElementSibling, "");
+			item.style.borderColor = "red";
 		}
 	});
 
 	return passed;
 }
 
+/**
+ *
+ * @param {*} element
+ * @param {*} msg
+ */
 function showElementWithMessage(element, msg) {
 	element.style.borderColor = "red";
 	element.textContent = msg;
