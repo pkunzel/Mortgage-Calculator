@@ -30,7 +30,8 @@ hr {
 }
 
 main {
-	width: 90vw;
+	width: fit-content;
+	width: -moz-fit-content;
 	max-width: 900px;
 	margin: 0 auto;
 	border: 1px solid black;
@@ -44,7 +45,7 @@ main {
 
 .calculator {
 	box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.3);
-	padding: 0 35px;
+	padding: 0 35px 35px;
 	z-index: 2;
 }
 
@@ -166,7 +167,7 @@ main {
 
 .inputTextBlock div span {
 	position: absolute;
-	margin: 12px 25px 0;
+	margin: 14px 25px 0;
 }
 
 .inputTextBlock div small {
@@ -196,10 +197,15 @@ main {
 	padding: 50px 0;
 }
 
+.heightAuto {
+	height: fit-content;
+}
+
 .results > div {
 	background-color: #eeeeee;
 	padding: 35px;
 	width: fit-content;
+	width: -moz-fit-content;
 }
 
 .resultOutput p {
@@ -241,10 +247,20 @@ main {
 	}
 
 	.results {
-		display: none;
-		padding: 10px;
+		margin-top: 2px;
 		background-color: #eeeeee;
 		color: #5f5f5f;
+		height: 0;
+		padding: 0;
+		overflow: hidden;
+		transition-property: height;
+		transition-duration: 1s;
+		transition-timing-function: linear;
+	}
+
+	.results > div {
+		width: 100%;
+		padding: 0;
 	}
 
 	.resultOutput {
@@ -267,11 +283,6 @@ main {
 		margin-bottom: 0;
 	}
 
-	.results > div {
-		width: 100%;
-		padding: 0;
-	}
-
 	.totalPayment p:first-child {
 		font-size: 1em;
 	}
@@ -282,5 +293,10 @@ main {
 
 	.hideMobile {
 		display: none;
+	}
+
+	.showResults {
+		padding: 10px 20px;
+		height: 325px;
 	}
 }

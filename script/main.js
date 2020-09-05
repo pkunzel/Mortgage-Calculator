@@ -1,18 +1,24 @@
+// Event to be fired when the screen loads
+window.addEventListener("load", init);
+
 /**
- * @description Function to be called when the Window Loads
+ * @description Function to be called when the Window Loads.
  */
 function init() {
 	$query("button").addEventListener("click", handleCalculate);
 
+	// Sets the range color based o the init value
+	// Adds the event listener to each input range
 	$queryAll('.inputRangeBlock input[type="range"]').forEach((element) => {
 		const percentRange = (element.value / element.max) * 100;
 		element.style.background = `linear-gradient(90deg, rgb(10,10,01) 0 ${percentRange}%, rgb(222,222,222) ${percentRange}%)`;
 		element.addEventListener("input", handleInputRange);
 	});
 }
+
 /**
- *
- * @param {*} event
+ * @description Handles the change in value from the input range elements
+ * @param {object} event Default event object passed by the event listener
  */
 function handleInputRange(event) {
 	const inputRange = event.target;
@@ -22,8 +28,8 @@ function handleInputRange(event) {
 }
 
 /**
- *
- * @param {*} event
+ * @description Handles the click on the calculate button
+ * @param {object} event Default event object passed by the event listener
  */
 function handleCalculate(event) {
 	const mortData = {
@@ -59,37 +65,30 @@ function handleCalculate(event) {
 }
 
 /**
- *
- * @param {*} checklist
+ * @description Checks if the inputs contain numbers and are not empty
+ * @param {Array} checklist An array with the HTML Elements to be checked
  */
 function checkInputs(checklist) {
 	let passed = true;
 	checklist.forEach((item) => {
 		if (item.value.trim() == "") {
 			passed = false;
-			showElementWithMessage(item.nextElementSibling, `${item.name} is mandatory`);
-			item.style.borderColor = "red";
-		} else if (isNaN(item.value)) {
+			item.nextElementSibling.textContent = screen.width > 640 ? `${item.name} is mandatory` : "Mandatory Field";
+		}
+
+		if (isNaN(item.value)) {
 			passed = false;
-			showElementWithMessage(item.nextElementSibling, "Value must be numeric");
-			item.style.borderColor = "red";
+			item.nextElementSibling.textContent = "Value must be numeric";
+		}
+
+		if (passed) {
+			item.style.borderColor = "black";
+			item.nextElementSibling.textContent = "";
+			$query(".results").classList.add("showResults");
 		} else {
-			showElementWithMessage(item.nextElementSibling, "");
 			item.style.borderColor = "red";
 		}
 	});
 
 	return passed;
 }
-
-/**
- *
- * @param {*} element
- * @param {*} msg
- */
-function showElementWithMessage(element, msg) {
-	element.style.borderColor = "red";
-	element.textContent = msg;
-}
-
-window.addEventListener("load", init);
