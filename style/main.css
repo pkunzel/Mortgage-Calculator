@@ -65,11 +65,16 @@ main {
 	margin-bottom: 10px;
 }
 
-.calculator div input[type="text"] {
+.calculator div input[type="text"],
+.calculator div input[type="number"] {
 	height: 40px;
 	width: 100%;
 	border-radius: 5px;
 	font-size: 16px;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+	height: 40px;
 }
 
 .calculator button {
@@ -146,7 +151,7 @@ main {
 	margin-bottom: 10px;
 }
 
-.inputTextBlock div input[type="text"] {
+.inputTextBlock div input[type="number"] {
 	border: 1px solid black;
 	width: calc(100% - 35px);
 	padding-left: 40px;
