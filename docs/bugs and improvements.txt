@@ -1,0 +1,19 @@
+(Bugs)
+- In really small screen and old screens the labels may break line.
+	* We could make the font really small (bad for reading?).
+	* We could change the labels text for mobile devices.
+
+- Input number accepts letters and shows empty string in test
+	* check keypress and clear non numeric values.
+	* or change to input text and check with isNaN.
+
+- Large values don't resize when they are bigget than the screen's width
+	* create a rule to change the font size according the length of the number
+	* or use css to break line (easier but no as good looking).
+
+(Improvements)
+- Animations: The site could use animations on showing results, errors, etc..
+
+- Remove button calculate and show values as they are typed
+
+- Add a number mask separating the thousands?

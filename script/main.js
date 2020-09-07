@@ -72,13 +72,9 @@ function checkInputs(checklist) {
 	let passed = true;
 	checklist.forEach((item) => {
 		if (item.value.trim() == "") {
+			item.value = "";
 			passed = false;
 			item.nextElementSibling.textContent = screen.width > 640 ? `${item.name} is mandatory` : "Mandatory Field";
-		}
-
-		if (isNaN(item.value)) {
-			passed = false;
-			item.nextElementSibling.textContent = "Value must be numeric";
 		}
 
 		if (passed) {
