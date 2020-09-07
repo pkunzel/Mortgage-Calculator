@@ -1,5 +1,5 @@
 # Mortgage-Calculator
-
+<pre>
 This is a project for a screen with a mortgage calculator as provided in the pdf file saved in docs/ConsumerAffairs FE_JS practical test 2020.pdf
 
 To run the app all you need is to download the application and execute the index.html file.
@@ -22,3 +22,4 @@ index.html                                        -- The main and only app scree
     mortgage-calculator.js                        -- A transpiled version of all JS files.
 
 About the scripts. All work was done int the util, calculator and main files. The mortgage-calculator is only a transpiled version of all other files together.
+</pre>
